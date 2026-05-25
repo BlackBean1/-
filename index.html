@@ -86,14 +86,30 @@ section{padding:96px 6%}
 .pain-p{font-size:13px;color:var(--mu);line-height:1.75}
 
 /* PRODUCTS */
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.pg{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
 .pg .wide{grid-column:span 2}
-.pc{background:var(--d1);border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden;transition:all .3s}
-.pc:hover{border-color:rgba(232,93,4,0.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-.pi{height:220px;background:var(--d3);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.pg .wide .pi{height:280px}
-.pi img{width:100%;height:100%;object-fit:contain;transition:transform .5s;background:var(--d3)}
-.pc:hover .pi img{transform:scale(1.03)}
+.pc{background:var(--d1);border:1px solid rgba(255,255,255,0.07);border-radius:20px;overflow:hidden;transition:all .3s;position:relative}
+.pc:hover{border-color:rgba(232,93,4,0.5);transform:translateY(-6px);box-shadow:0 24px 64px rgba(0,0,0,0.6)}
+.pi{height:360px;background:#1c1c1c;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.pg .wide .pi{height:420px}
+.pi img{width:100%;height:100%;object-fit:contain;padding:24px;transition:transform .6s;background:#1c1c1c}
+.pc:hover .pi img{transform:scale(1.06)}
+/* 文字疊加在圖片下方漸層 */
+.pi-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(8,8,8,0.95));padding:28px 24px 20px;z-index:3}
+.pi-overlay .pn{font-size:20px;font-weight:900;margin-bottom:6px;letter-spacing:-0.02em}
+.pi-overlay .pd{font-size:13px;color:var(--mu);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* 價格標籤移到左上 */
+.pprice{position:absolute;top:14px;right:14px;background:var(--o);color:#fff;font-size:13px;font-weight:900;padding:6px 14px;border-radius:6px;z-index:4;letter-spacing:.02em}
+.ptag{position:absolute;top:14px;left:14px;background:rgba(8,8,8,0.75);border:1px solid rgba(232,93,4,0.5);color:var(--o);font-size:10px;font-weight:800;padding:4px 10px;border-radius:4px;letter-spacing:.06em;z-index:4}
+/* 하단 규격 영역 */
+.pb{padding:16px 24px 20px;border-top:1px solid rgba(255,255,255,0.05)}
+.pn{display:none}
+.pd{display:none}
+.pfs{display:flex;flex-wrap:wrap;gap:8px}
+.pf{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(240,237,232,0.55)}
+.pf-dot{width:4px;height:4px;border-radius:50%;background:var(--o);flex-shrink:0}
+.pcerts{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.cert-badge{font-size:10px;font-weight:700;color:var(--o);background:rgba(232,93,4,0.08);border:1px solid rgba(232,93,4,0.2);padding:3px 8px;border-radius:4px}
 /* 救災包用多圖輪播 */
 .pi-slides{width:100%;height:100%;position:relative;overflow:hidden}
 .pi-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s}
@@ -401,8 +417,50 @@ footer strong{color:var(--o)}
             <div class="pf"><div class="pf-dot"></div>MIT 台灣製防火布</div>
             <div class="pf"><div class="pf-dot"></div>1000萬產品責任險</div>
           </div>
-          <div class="pcerts">
-            <span class="cert-badge">CNS10285 防焰1級</span>
+          <div class="pcerts"><span class="cert-badge">CNS10285 防焰1級</span></div>
+        </div>
+      </div>
+
+      <!-- 臂盾 -->
+      <div class="pc">
+        <div class="pi">
+          <div class="pi-slides" id="shield-slides">
+            <div class="pi-slide active"><img src="" id="security-img1" alt="臂盾"></div>
+            <div class="pi-slide"><img src="" id="security-img2" alt="臂盾印刷版"></div>
+          </div>
+          <div class="ptag">個人安保</div>
+          <div class="pprice">來電詢價</div>
+        </div>
+        <div class="pb">
+          <div class="pn">防護臂盾</div>
+          <div class="pd">輕量化個人防護盾牌，適合保全人員、校園安全人員使用。高強度材質，有效阻擋衝擊，保護持盾者安全。</div>
+          <div class="pfs">
+            <div class="pf"><div class="pf-dot"></div>輕量高強度材質</div>
+            <div class="pf"><div class="pf-dot"></div>適合保全、校園安全人員</div>
+            <div class="pf"><div class="pf-dot"></div>中保品牌品質保證</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 防爆鋼叉 -->
+      <div class="pc">
+        <div class="pi">
+          <div class="pi-slides" id="fork-slides">
+            <div class="pi-slide active"><img src="" id="security-img3" alt="防爆鋼叉"></div>
+            <div class="pi-slide"><img src="" id="security-img4" alt="鋼叉本體"></div>
+            <div class="pi-slide"><img src="" id="security-img5" alt="防爆鋼叉L3"></div>
+            <div class="pi-slide"><img src="" id="security-img6" alt="防爆鋼叉53"></div>
+          </div>
+          <div class="ptag">個人安保</div>
+          <div class="pprice">來電詢價</div>
+        </div>
+        <div class="pb">
+          <div class="pn">防爆鋼叉</div>
+          <div class="pd">低致命性長柄防衛壓制工具，常見於警方、保全及校園安全防護。前端月牙弧形設計，可在安全距離內限制暴力人士行動，自動鎖定機制防止掙脫。</div>
+          <div class="pfs">
+            <div class="pf"><div class="pf-dot"></div>安全距離壓制，保護執勤人員</div>
+            <div class="pf"><div class="pf-dot"></div>高強度鋁合金月牙，自動鎖定</div>
+            <div class="pf"><div class="pf-dot"></div>適合保全、校園、執法單位</div>
           </div>
         </div>
       </div>
@@ -591,6 +649,8 @@ function startSlideshow(slidesId,ms){
 startSlideshow('blanket-slides',3000);
 startSlideshow('bag-slides',2500);
 startSlideshow('pouch-slides',2200);
+startSlideshow('shield-slides',3000);
+startSlideshow('fork-slides',2000);
 </script>
 </body>
 </html>
